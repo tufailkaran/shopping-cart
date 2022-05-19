@@ -19,6 +19,7 @@
 <body>
      {{ View::make('Layout.header') }}
      @yield('content')
+      
      {{ View::make('Layout.footer') }}
 </body>
 <style>
@@ -58,7 +59,15 @@
         margin-bottom: 20px;
         padding-bottom: 20px
     }
-    
+    .products-img, .category-img{
+         height: 100px;
+    }
 </style>
-
+<!-- Latest Sweet Alert CDN -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+@if(session('status'))
+     <script>
+          swal("{{ session('status') }}");
+     </script>
+@endif
 </html>

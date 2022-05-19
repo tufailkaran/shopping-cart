@@ -7,20 +7,59 @@ use App\Models\Product;
 use App\Models\Cart;
 use Illuminate\Support\Facades\DB;
 use App\Models\Order;
-
+use Illuminate\Session\Middleware\StartSession;
 use Session;
 
 class ProductController extends Controller
 {
     //
+    
     function product(){
         $data = Product::all();
         return view('product', ['product'=>$data]);
+    }
+    function productList(){
+        $data = Product::all();
+        return view('Product.productlist', ['product'=>$data]);
+    }
+    function addProduct(){
+        
+        return view('Product.create');
+    }
+    function insertProduct(Request $req){
+        $products = new Product();
+        $products->name = $req ->input('name');
+        $products->price = $req ->input('price');
+        $products->category = $req ->input('category');
+        $products->description = $req ->input('description');
+        $products->gallery = $req ->input('gallery');
+        $products->save();
+        return redirect('products')->with('status',"Product Added Successfully");
+    }
+    public function editProduct($id){
+        $products = Product::find($id);
+        return view('Product.editProduct', compact('products') );
+    }
+    public function updateProduct(Request $req, $id){
+        $products = Product::find($id);
+        $products->name = $req ->input('name');
+        $products->price = $req ->input('price');
+        $products->category = $req ->input('category');
+        $products->description = $req ->input('description');
+        $products->gallery = $req ->input('gallery');
+        $products->update();
+        return redirect('products')->with('status',"Product Updated Successfully");
+    }
+    public function deleteProduct($id){
+        $products = Product::find($id);
+        $products->delete();
+        return redirect('products')->with('status',"Product Deleted Successfully");
     }
     function detail($id){
         $data = product::find($id);
         return view('detail', ['product'=>$data]);
     }
+    
     function search(Request $req)
     {
         $data= Product::
@@ -104,5 +143,10 @@ class ProductController extends Controller
  
          return view('myorders',['orders'=>$orders]);
     
+    }
+    public function deleteOrder($id){
+        $orders = Order::find($id);
+        $orders->delete();
+        return redirect('myorders')->with('status',"Order Deleted Successfully");
     }
 }
