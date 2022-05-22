@@ -59,6 +59,7 @@ class ProductController extends Controller
         $data = product::find($id);
         return view('detail', ['product'=>$data]);
     }
+    
     function search(Request $req)
     {
         $data= Product::
@@ -144,6 +145,7 @@ class ProductController extends Controller
          return view('myorders',['orders'=>$orders]);
     
     }
+<<<<<<< HEAD
     function addInvoice()
     {
         $userId=Session::get('user')['id'];
@@ -155,9 +157,15 @@ class ProductController extends Controller
          return view('Invoice.create',['orders'=>$orders]);
     
     }
+=======
+>>>>>>> f89bbd4c08e1ec3651c07b86bf6137cebdbb1c93
     public function deleteOrder($id){
         $orders = Order::find($id);
         $orders->delete();
         return redirect('myorders')->with('status',"Order Deleted Successfully");
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> f89bbd4c08e1ec3651c07b86bf6137cebdbb1c93

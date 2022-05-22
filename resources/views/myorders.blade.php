@@ -19,7 +19,10 @@
                       <h5>Payment Status : {{$item->payment_status}}</h5>
                       <h5>Payment Method : {{$item->payment_method}}</h5>
                       <a href="{{ url('delete-order/'.$item->id) }}" class="btn btn-danger">Delete Order</a>
+<<<<<<< HEAD
                       <a href="{{ url('create-invoice/'.$item->id) }}" class="btn btn-primary">Create Invoice</a>
+=======
+>>>>>>> f89bbd4c08e1ec3651c07b86bf6137cebdbb1c93
                     </div>
              </div>
             

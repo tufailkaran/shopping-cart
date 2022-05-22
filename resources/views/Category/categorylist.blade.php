@@ -25,6 +25,7 @@
                          <tbody>
                               @foreach ($category as $item)
                               <tr>
+<<<<<<< HEAD
                                    <td>{{ $item->id }}</td>
                                    <td>{{ $item->name }}</td>
                                    <td>{{ $item->description }}</td>
@@ -32,6 +33,15 @@
                                    <td>
                                         <a href="{{ url('edit-category/'.$item->id) }}" class="btn btn-primary">Edit</a>
                                         <a href="{{ url('delete-category/'.$item->id) }}" class="btn btn-danger">Delete</a>
+=======
+                                   <td>{{ $item['id'] }}</td>
+                                   <td>{{ $item['name'] }}</td>
+                                   <td>{{ $item['description'] }}</td>
+                                   <td><img class="category-img" src="{{ $item['gallery'] }}" ></td>
+                                   <td>
+                                        <a href="{{ url('edit-category/'.$item['id']) }}" class="btn btn-primary">Edit</a>
+                                        <a href="{{ url('delete-category/'.$item['id']) }}" class="btn btn-danger">Delete</a>
+>>>>>>> f89bbd4c08e1ec3651c07b86bf6137cebdbb1c93
                                    </td>
                               </tr>
                               @endforeach

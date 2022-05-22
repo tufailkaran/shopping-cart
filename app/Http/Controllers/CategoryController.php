@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
+=======
+
+>>>>>>> f89bbd4c08e1ec3651c07b86bf6137cebdbb1c93
 class CategoryController extends Controller
 {
     //
@@ -22,11 +26,18 @@ class CategoryController extends Controller
     {
         $category = new Category();
         if($req->hasFile('gallery')){
+<<<<<<< HEAD
            
             $file = $req->file('gallery');
             $ext = $file->getClientOriginalExtension();
             $filename= time().'.'.$ext;
             $file->move('assets/uploads/category',$filename);
+=======
+            $file = $req->file('gallery');
+            $ext = $file->getClientOriginalExtension();
+            $filename= time().'.'.$ext;
+            $file->move('assets/uploads/category'.$filename);
+>>>>>>> f89bbd4c08e1ec3651c07b86bf6137cebdbb1c93
             $category->gallery=$filename;
 
         }
@@ -35,6 +46,7 @@ class CategoryController extends Controller
         $category->save();
         return redirect('categories')->with('status',"Category Added Successfully");
     } 
+<<<<<<< HEAD
     public function editCategory($id){
         $category = Category::find($id);
         return view('Category.editCategory', compact('category') );
@@ -75,4 +87,6 @@ class CategoryController extends Controller
         dd($category);
 
     }*/
+=======
+>>>>>>> f89bbd4c08e1ec3651c07b86bf6137cebdbb1c93
 }
