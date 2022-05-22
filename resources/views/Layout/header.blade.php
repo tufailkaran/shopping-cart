@@ -27,13 +27,26 @@ if(Session::has('user'))
            <li class="dropdown">
              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Category <span class="caret"></span></a>
              <ul class="dropdown-menu">
-               <li><a href="#">Mobile</a></li>
-               <li><a href="#">Laptop </a></li>
-               <li><a href="#">Tablets</a></li>
+              <li><a href="/categories">Category List</a></li>
+              <li><a href="/addcategory">Add Category </a></li>
                
              </ul>
            </li>
-           <li class="active"><a href="#">Products</a></li>
+           <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/products">Product List</a></li>
+              <li><a href="/addproduct">Add Product </a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Payment <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/payments">Pyyment List</a></li>
+              <li><a href="/addpayment">Add Payment </a></li>
+            </ul>
+          </li>
+          <!-- <li class="active"><a href="/products">Products</a></li> -->
           <li class="active"><a href="/myorders">Orders</a></li>
           <li class="active"><a href="#">Invoices</a></li>
          </ul>
