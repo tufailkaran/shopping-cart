@@ -39,7 +39,6 @@ if(Session::has('user'))
               <li><a href="/addproduct">Add Product </a></li>
             </ul>
           </li>
-<<<<<<< HEAD
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Payment <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -47,8 +46,6 @@ if(Session::has('user'))
               <li><a href="/addpayment">Add Payment </a></li>
             </ul>
           </li>
-=======
->>>>>>> f89bbd4c08e1ec3651c07b86bf6137cebdbb1c93
           <!-- <li class="active"><a href="/products">Products</a></li> -->
           <li class="active"><a href="/myorders">Orders</a></li>
           <li class="active"><a href="#">Invoices</a></li>
